@@ -20,7 +20,7 @@ To fetch the leaderboard for a specific round, you can include the optional `rou
 included, the most up-to-date leaderboard for that tournament will be returned.
 
 #### Github Tutorial
-[Leaderboard Tracker Sample](https://github.com/andrewlaguna824/slash-golf-samples/tree/master/leaderboard_tracker)
+[Leaderboard Tracker Sample](https://github.com/slashgolf/slashgolf/tree/main/samples/leaderboard_tracker)
 
 # Live Scorecard Data
 

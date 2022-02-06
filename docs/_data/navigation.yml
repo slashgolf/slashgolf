@@ -1,0 +1,20 @@
+- name: Quick Start
+  link: /quickstart/
+  new_window: false
+  highlight: false
+- name: API Docs
+  link: /docs/
+  new_window: false
+  highlight: false
+- name: Pricing
+  link: https://rapidapi.com/slashgolf/api/live-golf-data/pricing
+  new_window: true
+  highlight: false
+- name: Contact
+  link: /contact/
+  new_window: false
+  highlight: false
+- name: Sign Up
+  link: https://rapidapi.com/slashgolf/api/live-golf-data
+  new_window: true
+  highlight: false

@@ -1,0 +1,75 @@
+# ----
+# Site
+
+title: Slash Golf API
+url: "https://slashgolf.dev"
+baseurl:
+rapidapi_url: "https://rapidapi.com/slashgolf/api/live-golf-data"
+google_analytics_key:
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Live PGA Tour golf data
+author:
+  name:
+  email: slashgolfapi@gmail.com
+  twitter: # twitter username without the @ symbol
+social:
+  name: Slash Golf Api
+  links:
+    - https://rapidapi.com/slashgolf/api/live-golf-data
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+  - scope:
+      path: "index.html"
+    values:
+      layout: "default"
+  - scope:
+      path: "contact.html"
+    values:
+      full_width: true
+  - scope:
+      path: "docs.html"
+    values:
+      full_width: true # This gets redocly api docs to stretch the full width of the page
+
+jekyll-archives:
+  enabled:
+    - categories
+
+plugins:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+gem "github-pages", group: :jekyll_plugins
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENCE
+
+# VistaCreate was used for images
+
+# -----------
+# CloudCannon
+
+_select_data:
+  social_icons:
+    - Facebook
+    - Instagram
+    - LinkedIn
+    - Pinterest
+    - Tumblr
+    - Twitter
+    - YouTube
+    - RSS

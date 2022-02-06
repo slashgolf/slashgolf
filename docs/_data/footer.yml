@@ -1,0 +1,30 @@
+- links:
+  - name: Pricing
+    link: https://rapidapi.com/slash-golf-slash-golf-default/api/live-golf-data/pricing
+    new_window: true
+  - name: Docs
+    link: /docs/
+    new_window: false
+  - name: Contact
+    link: /contact/
+    new_window: false
+  - name: Sign Up
+    link: https://rapidapi.com/slash-golf-slash-golf-default/api/live-golf-data/
+    new_window: true
+# - links:
+#   - name: Facebook
+#     link: https://facebook.com/cloudcannon/
+#     new_window: true
+#     social_icon: Facebook
+#   - name: Twitter
+#     link: https://twitter.com/cloudcannon/
+#     social_icon: Twitter
+#     new_window: true
+#   - name: YouTube
+#     link: https://youtube.com/cloudcannon/
+#     social_icon: YouTube
+#     new_window: true
+#   - name: RSS
+#     link: /feed.xml
+#     social_icon: RSS
+#     new_window: false

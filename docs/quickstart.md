@@ -25,7 +25,7 @@ included, the most up-to-date leaderboard for that tournament will be returned.
 # Live Scorecard Data
 
 ### Step 1: Fetch the Schedule
-See [schedule](live-leaderboard-data).
+See [schedule](#live-leaderboard-data).
 
 ### Step 2: Fetch the Tournament Entry List
 In order to query for live scorecard data, a `playerId` parameter must be included in the query along with the tournament's
@@ -46,7 +46,7 @@ Coming Soon!
 # Tournament Results
 
 ### Step 1: Fetch the Schedule
-See [schedule](live-leaderboard-data).
+See [schedule](#live-leaderboard-data).
 
 ### Step 2: Fetch FedExCup Points
 A tournament's FedExCup points can be fetched from the `/points` endpoint by providing the tournament's `tournId` and `year`

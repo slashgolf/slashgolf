@@ -1,2 +1,8 @@
 .DS_Store
 /idea
+
+# Jekyll ignores
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata

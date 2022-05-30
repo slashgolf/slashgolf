@@ -547,6 +547,9 @@ components:
                 type: string
               roundComplete:
                 type: boolean
+              teeTime:
+                type: string
+                example: "7:30am"
               rounds:
                 type: array
                 items:

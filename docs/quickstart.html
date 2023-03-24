@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Slash Golf API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" " />
+    <meta name="keywords" content="" />
+    <meta content="Pichforest" name="author" />
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" id="bootstrap-style" />
+
+    <!-- Material Icon Css -->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css" />
+
+    <!-- Unicon Css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.min.css" type="text/css" />
+
+    <!-- colors -->
+    <link href="css/colors/default.css" rel="stylesheet" type="text/css" id="color-opt" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71">
+
+<!-- START  NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light navbar-light" id="navbar">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="mdi mdi-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto" id="navbar-navlist">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./quickstart.html">Quickstart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing">Sign Up</a>
+                </li>
+            </ul>
+            <!-- Placeholder div to ensure navbar is formatted correctly-->
+            <div class="ms-auto">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- home section -->
+<section class="home-2 bg-primary" id="home">
+    <div class="background-line">
+        <div class="line-rounded"></div>
+    </div>
+    <!-- start container -->
+    <div class="container position-relative">
+        <!-- start row -->
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center margin-top-120">
+                    <i class="mdi mdi-crown text-white f-30"></i>
+                    <h1 class="home-title mb-0 text-white display-5">
+                        Quickstart Guides
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="phone-mockup">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-4">
+                    <div class="video-preview video-container mt-4">
+                        <img src="images/mark-white.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+    <div class="background-line-2">
+        <div class="line-rounded"></div>
+    </div>
+
+</section>
+<!-- end home section -->
+
+
+<!-- start features -->
+<div class="section features bg-light" id="features">
+    <!-- start container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title mb-5">
+                    <h2 class="f-40">Live Leaderboards</h2>
+                    <div class="content mt-3">
+                        <h5>Fetch the Schedule</h5>
+                        <p>The schedule for a PGA Tour season is obtainable from the <code>/schedules</code> endpoint. Each entry in the <code>schedule</code> array contains metadata about a given tournament. The most important field in this object is the <code>tournId</code> field, which is used to query almost every other endpoint.</p>
+
+                        <h5>Fetch the Leaderboard</h5>
+                        <p>The leaderboard for a specific tournament is obtainable from the <code>/leaderboards</code> endpoint. Each tournament has 1 leaderboard entry for each round of a tournament for a given year. A leaderboard is queryable using <code>tournId</code> obtained from the <code>/schedules</code> endpoint along with the year for that <code>tournId</code>.</p>
+                        <p>To fetch the leaderboard for a specific round, you can include the optional <code>roundId</code> parameter in the api call. If not included, the most up-to-date leaderboard for that tournament will be returned.</p>
+
+                        <h5>Github Tutorial</h5>
+                        <p><a href="https://github.com/slashgolf/slashgolf/tree/main/samples/leaderboard_tracker">Leaderboard Tracker Sample</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title mb-5">
+                    <h2 class="f-40">Live Scorecards</h2>
+                    <div class="content mt-3">
+                        <h5>Fetch the Schedule</h5>
+                        <p>See above</p>
+
+                        <h5>Fetch the Tournament Entry List</h5>
+                        <p>In order to query for live scorecard data, a <code>playerId</code> parameter must be included in the query along with the tournament's <code>tournId</code> and <code>year</code>. Entry list, along with other pertinent metadata, such as location and course information, can be fetched from the <code>/tournaments</code> endpoint. The entry list can be found under the <code>players</code> array in the endpoint's response. A player's <code>status</code> can also be found in each entry of the array, which will have values <code>active</code>, <code>cut</code>, or <code>wd</code>.</p>
+                        <p>Note that a tournament's entry list is finalized by the PGA Tour some time after 5 pm ET the Friday before the event</p>
+
+                        <h5>Fetch Player's Scorecard</h5>
+                        <p>The player's scorecard for a given year's tournament can be fetched from the <code>/scorecards</code> endpoint. The <code>tournId</code>, <code>year</code>, and <code>playerId</code> are all required parameters. To query only a single round for the given player, include the <code>roundId</code> parameter. If no <code>roundId</code> is included, an array of all the player's scorecards will be returned.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title mb-5">
+                    <h2 class="f-40">Tournament Results</h2>
+                    <div class="content mt-3">
+                        <h5>Fetch the Schedule</h5>
+                        <p>See above</p>
+
+                        <h5>Fetch FedExCup Points</h5>
+                        <p>A tournament's FedExCup points can be fetched from the <code>/points</code> endpoint by providing the tournament's <code>tournId</code> and <code>year</code> parameters. The <code>leaderboard</code> array has an object for each player on the leaderboard who earned FedExCup points from the event. The points are populated usually a few hours after the tournament has ended.</p>
+                        <p>Note that non-PGA Tour players will not be accounted for in this leaderboard.</p>
+
+                        <h5>Fetch Earnings</h5>
+                        <p>A tournament's earnings can be fetched from the <code>/earnings</code> endpoint by providing the tournament's <code>tournId</code> and <code>year</code> parameters. The <code>leaderboard</code> array has an object for each player on the leaderboard who earned a paycheck from the event. The earnings are populated usually a few hours after the tournament has ended.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</div>
+<!-- end features -->
+
+
+<!-- contact section -->
+<section class="section contact overflow-hidden" id="contact">
+    <!-- start container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <h6 class="mb-0 fw-bold text-primary">Contact Us</h6>
+                    <h2 class="f-40">Get In Touch!</h2>
+                    <p class="text-muted">We would love to help with questions, support, and to learn more about what you're building!<br></p>
+                    <p><a href="mailto:slashgolfapi@gmail.com">slashgolfapi@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end section -->
+
+<section class="bottom-footer py-4 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <p class="mb-0 text-center text-muted">©<script>document.write(new Date().getFullYear())</script> Slash Golf</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+<!--Bootstrap Js-->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Slider Js -->
+<script src="js/tiny-slider.js"></script>
+<script src="js/swiper.min.js"></script>
+
+<!-- <script src="js/smooth-scroll.polyfills.min.js"></script> -->
+
+<!-- counter -->
+<!-- <script src="js/counter.init.js"></script> -->
+
+<!-- App Js -->
+<script src="js/app.js"></script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+        if (this.isDeleting) { delta /= 2; }
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
+
+    function typewrite() {
+        if (toRotate === 'undefined') {
+            changeText()
+        }
+        else
+            var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #ffffff}";
+        document.body.appendChild(css);
+    };
+    typewrite();
+
+
+</script>
+
+</body>
+
+</html>

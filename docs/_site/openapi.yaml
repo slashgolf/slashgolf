@@ -26,7 +26,7 @@ paths:
           description: Note that a season year (e.g. "2022") usually starts in the fall of the previous calendar year
           schema:
             type: string
-            default: 2022
+            example: 2022
       responses:
         '200':
           description: successful operation
@@ -59,21 +59,21 @@ paths:
           required: false
           schema:
             type: string
-            default: Morikawa
+            example: Morikawa
         - name: firstName
           in: query
           description: The player's first name
           required: false
           schema:
             type: string
-            default: Collin
+            example: Collin
         - name: playerId
           in: query
           description: The player's playerId
           required: false
           schema:
             type: string
-            default: '50525'
+            example: '50525'
       responses:
         '200':
           description: successful operation
@@ -103,14 +103,14 @@ paths:
           required: true
           schema:
             type: string
-            default: "006"
+            example: "006"
         - name: year
           in: query
           description: The season year for the desired tournament
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
       responses:
         '200':
           description: successful operation
@@ -140,21 +140,21 @@ paths:
           required: true
           schema:
             type: string
-            default: "006"
+            example: "006"
         - name: year
           in: query
           description: The season year for the desired tournament
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
         - name: roundId
           in: query
           description: The roundId of the tournament (e.g. 1, 2, 3, 4)
           required: false
           schema:
             type: string
-            default: 4
+            example: 4
       responses:
         '200':
           description: successful operation
@@ -185,14 +185,14 @@ paths:
           required: true
           schema:
             type: string
-            default: "006"
+            example: "006"
         - name: year
           in: query
           description: The season year for the desired tournament
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
         - name: playerId
           in: query
           description: >-
@@ -202,14 +202,14 @@ paths:
           required: true
           schema:
             type: string
-            default: 4
+            example: '50525'
         - name: roundId
           in: query
           description: The roundId of the tournament (e.g. 1, 2, 3, 4)
           required: false
           schema:
             type: string
-            default: 4
+            example: 4
       responses:
         '200':
           description: successful operation
@@ -240,14 +240,14 @@ paths:
           required: true
           schema:
             type: string
-            default: "006"
+            example: "006"
         - name: year
           in: query
           description: The season year for the desired tournament
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
       responses:
         '200':
           description: successful operation
@@ -276,14 +276,14 @@ paths:
           required: true
           schema:
             type: string
-            default: "006"
+            example: "006"
         - name: year
           in: query
           description: The season year for the desired tournament
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
       responses:
         '200':
           description: successful operation
@@ -310,14 +310,14 @@ paths:
           required: true
           schema:
             type: string
-            default: 2022
+            example: 2022
         - name: statId
           in: query
           description: The statId for the desired ranking
           required: true
           schema:
             type: string
-            # default: "02671"
+            # example: "02671"
             enum: ["02671", "186"]
       responses:
         '200':
@@ -547,6 +547,9 @@ components:
                 type: string
               roundComplete:
                 type: boolean
+              teeTime:
+                type: string
+                example: "7:30am"
               rounds:
                 type: array
                 items:

@@ -1,3 +1,25 @@
+<!--
+<html lang="en">
+<head>
+    <title>Redoc</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<redoc spec-url="../openapi.yaml" side-nav-style="path-only"></redoc>
+<script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
+</body>
+</html>
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +105,7 @@
                 <div class="text-center margin-top-120">
                     <i class="mdi mdi-crown text-white f-30"></i>
                     <h1 class="home-title mb-0 text-white display-5">
-                        Quickstart Guides
+                        API Docs
                     </h1>
                 </div>
             </div>
@@ -115,56 +137,10 @@
     <!-- start container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
+            <div >
                 <div class="title mb-5">
-                    <h2 class="f-40">Live Leaderboards</h2>
-                    <div class="content mt-3">
-                        <h5>Fetch the Schedule</h5>
-                        <p>The schedule for a PGA Tour season is obtainable from the <code>/schedules</code> endpoint. Each entry in the <code>schedule</code> array contains metadata about a given tournament. The most important field in this object is the <code>tournId</code> field, which is used to query almost every other endpoint.</p>
-
-                        <h5>Fetch the Leaderboard</h5>
-                        <p>The leaderboard for a specific tournament is obtainable from the <code>/leaderboards</code> endpoint. Each tournament has 1 leaderboard entry for each round of a tournament for a given year. A leaderboard is queryable using <code>tournId</code> obtained from the <code>/schedules</code> endpoint along with the year for that <code>tournId</code>.</p>
-                        <p>To fetch the leaderboard for a specific round, you can include the optional <code>roundId</code> parameter in the api call. If not included, the most up-to-date leaderboard for that tournament will be returned.</p>
-
-                        <h5>Github Tutorial</h5>
-                        <p><a href="https://github.com/slashgolf/slashgolf/tree/main/samples/leaderboard_tracker">Leaderboard Tracker Sample</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="title mb-5">
-                    <h2 class="f-40">Live Scorecards</h2>
-                    <div class="content mt-3">
-                        <h5>Fetch the Schedule</h5>
-                        <p>See above</p>
-
-                        <h5>Fetch the Tournament Entry List</h5>
-                        <p>In order to query for live scorecard data, a <code>playerId</code> parameter must be included in the query along with the tournament's <code>tournId</code> and <code>year</code>. Entry list, along with other pertinent metadata, such as location and course information, can be fetched from the <code>/tournaments</code> endpoint. The entry list can be found under the <code>players</code> array in the endpoint's response. A player's <code>status</code> can also be found in each entry of the array, which will have values <code>active</code>, <code>cut</code>, or <code>wd</code>.</p>
-                        <p>Note that a tournament's entry list is finalized by the PGA Tour some time after 5 pm ET the Friday before the event</p>
-
-                        <h5>Fetch Player's Scorecard</h5>
-                        <p>The player's scorecard for a given year's tournament can be fetched from the <code>/scorecards</code> endpoint. The <code>tournId</code>, <code>year</code>, and <code>playerId</code> are all required parameters. To query only a single round for the given player, include the <code>roundId</code> parameter. If no <code>roundId</code> is included, an array of all the player's scorecards will be returned.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="title mb-5">
-                    <h2 class="f-40">Tournament Results</h2>
-                    <div class="content mt-3">
-                        <h5>Fetch the Schedule</h5>
-                        <p>See above</p>
-
-                        <h5>Fetch FedExCup Points</h5>
-                        <p>A tournament's FedExCup points can be fetched from the <code>/points</code> endpoint by providing the tournament's <code>tournId</code> and <code>year</code> parameters. The <code>leaderboard</code> array has an object for each player on the leaderboard who earned FedExCup points from the event. The points are populated usually a few hours after the tournament has ended.</p>
-                        <p>Note that non-PGA Tour players will not be accounted for in this leaderboard.</p>
-
-                        <h5>Fetch Earnings</h5>
-                        <p>A tournament's earnings can be fetched from the <code>/earnings</code> endpoint by providing the tournament's <code>tournId</code> and <code>year</code> parameters. The <code>leaderboard</code> array has an object for each player on the leaderboard who earned a paycheck from the event. The earnings are populated usually a few hours after the tournament has ended.</p>
-                    </div>
+                    <redoc spec-url="./openapi.yaml" side-nav-style="path-only"></redoc>
+                    <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
                 </div>
             </div>
         </div>

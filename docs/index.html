@@ -1,84 +1,552 @@
----
-title: Slash Golf API
-description: Live PGA Tour golf data
----
-<section class="hero">
-	<div class="text-container">
-		<h1>The <strong>best</strong> PGA Tour golf data API</h1>
-		<p class="subtext">Access <strong>live</strong> PGA Tour data for all your applications</p>
-		<div class="cta button alt"><a href="{{ site.rapidapi_url }}" target="_blank">Try API Free</a></div>
-		<div>
-			<img src="{{ site.baseurl }}/images/trifecta.png" alt="Screenshot" class="screenshot" />
-		</div>
-	</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Slash Golf API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" " />
+    <meta name="keywords" content="" />
+    <meta content="Pichforest" name="author" />
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" id="bootstrap-style" />
+
+    <!-- Material Icon Css -->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css" />
+
+    <!-- Unicon Css -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/tiny-slider.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.min.css" type="text/css" />
+
+    <!-- colors -->
+    <link href="css/colors/default.css" rel="stylesheet" type="text/css" id="color-opt" />
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="71">
+
+<!-- START  NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light navbar-light" id="navbar">
+    <div class="container-fluid">
+
+        <!-- LOGO -->
+        <!-- TODO: Logo doesn't look great right now
+        <a class="navbar-brand logo text-uppercase" href="index.html">
+            <img src="images/logo.png" class="logo-light " alt="" height="28">
+            <img src="images/logo.png" class="logo-dark" alt="" height="28">
+        </a>
+        -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="mdi mdi-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto" id="navbar-navlist">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+            <!-- Placeholder div to ensure navbar is formatted correctly-->
+            <div class="ms-auto">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+
+
+<!-- home section -->
+<section class="home-2 bg-primary" id="home">
+    <div class="background-line">
+        <div class="line-rounded"></div>
+    </div>
+    <!-- start container -->
+    <div class="container position-relative">
+        <!-- start row -->
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center margin-top-120">
+                    <i class="mdi mdi-crown text-white f-30"></i>
+                    <h1 class="home-title mb-0 text-white display-5">
+                            <span class="typewrite " data-period="2000"
+                                  data-type='[ "Leaderboards","Scorecards","Schedules", "Rankings", "Earnings" ]'>
+                                <span class="wrap"></span>
+                            </span>
+                    </h1>
+                    <h5 class="text-white-50 mt-4">Access live PGA and LIV data for all your applications.</h5>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="phone-mockup">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-4">
+                    <div class="video-preview video-container mt-4">
+                        <img src="images/mark-white.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+    <div class="background-line-2">
+        <div class="line-rounded"></div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" id="watchvideomodal" data-keyboard="false" tabindex="-1"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+            <div class="modal-content hero-modal-0 bg-transparent">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <video id="VisaChipCardVideo" class="w-100" controls="">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <!--Browser does not support <video> tag -->
+                </video>
+            </div>
+        </div>
+    </div>
+
 </section>
+<!-- end home section -->
 
-<div class="content">
-	<section>
-		<div class="container flex">
-			<div class="text">
-				<h2><strong>Live Leaderboards</strong></h2>
-				<p>Up to date leaderboards so you can follow along in real time.</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/leaderboard.jpeg" alt="leaderboard" class="screenshot" />
-			</div>
-		</div>
-	</section>
 
-	<section>
-		<div class="container flex">
-			<div class="text">
-				<h2><strong>Live Scorecards</strong></h2>
-				<p>Shot-by-shot scorecard tracking for all players.</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/scorecard.jpeg" alt="scorecard" class="screenshot" />
-			</div>
-		</div>
-	</section>
+<!-- start features -->
+<div class="section features" id="features">
+    <!-- start container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <h2 class="f-40">API Features</h2>
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
+                        inventore omnis aliquid rerum alias molestias.</p>
+                </div>
+            </div>
+        </div>
 
-	<section>
-		<div class="container flex">
-			<div class="text">
-				<h2><strong>Tournament Results</strong></h2>
-				<p>FedExCup points and $$$ earned for each event.</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/money.png" alt="money" class="screenshot" />
-			</div>
-		</div>
-	</section>
+        <div class="row justify-content-center">
 
-	<section>
-		<div class="container flex">
-			<div class="text">
-				<h2><strong>OWGR and FedEx Cup Rankings</strong></h2>
-				<p>Official World Golf and FedEx Cup Rankings updated weekly</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/podium_1.png" alt="podium" class="screenshot" />
-			</div>
-		</div>
-	</section>
+            <div class="col-lg-12">
+                <div class="tab-content mt-5" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                         aria-labelledby="pills-home-tab">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <div class="features-item text-start text-lg-end">
+                                    <div class="icon avatar-sm text-center ms-lg-auto rounded-circle">
+                                        <i class="mdi mdi-calendar f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Tour Schedules</h5>
+                                        <p>See the entire season's schedule and determine the events you want to access.</p>
+                                    </div>
+                                </div>
 
-	<!--
-	testimonial to highlight some use case, our amazing support, and/or some feature of the API
-	<section class="testimonial">
-		<div class="container flex">
-			<div class="testimonial-block">
-				<div class="square-image"><img src="https://source.unsplash.com/6anudmpILw4/600x400" alt="Jim James"></div>
-				<blockquote>
-					<p>Hydra has shaped the business we have today. We have a repeatable sales process and a strategy to scale our team. I recommend Hydra to any business looking to improve their sales.</p>
-					<p class="author">Jim James - CEO of Global Corp.</p>
-				</blockquote>
-			</div>
-		</div>
-	</section>
-	-->
+                                <div class="features-item text-start text-lg-end mt-5">
+                                    <div class="icon avatar-sm text-center ms-lg-auto rounded-circle">
+                                        <i class="mdi mdi-information-variant f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Tournament Information</h5>
+                                        <p>Access tournament-specific information like locations, courses, and entry lists</p>
+                                    </div>
+                                </div>
 
-	<section class="bottom-cta">
-		<h2>Build better golf apps <strong>today</strong></h2>
-		<div class="button alt"><a href="#">Get Started Free</a></div>
-	</section>
+                                <div class="features-item text-start text-lg-end mt-5">
+                                    <div class="icon avatar-sm text-center ms-lg-auto rounded-circle">
+                                        <i class="mdi mdi-scoreboard-outline f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Live Leaderboards</h5>
+                                        <p>Our leaderboards are updated as soon as the official one does.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="images/podium.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="features-item">
+                                    <div class="icon avatar-sm text-center rounded-circle">
+                                        <i class="mdi mdi-golf f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Live Scorecards</h5>
+                                        <p>Scorecards show hole-by-hole score, updated in real-time.</p>
+                                    </div>
+                                </div>
+
+                                <div class="features-item mt-5">
+                                    <div class="icon avatar-sm text-center rounded-circle">
+                                        <i class="mdi mdi-currency-usd f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Tournament Results</h5>
+                                        <p>Access earnings and Fedex Cup points.</p>
+                                    </div>
+                                </div>
+
+                                <div class="features-item mt-5">
+                                    <div class="icon avatar-sm text-center rounded-circle">
+                                        <i class="mdi mdi-chart-line f-24"></i>
+                                    </div>
+                                    <div class="content mt-3">
+                                        <h5>Rankings</h5>
+                                        <p>Access OWGR and Fedex Cup rankings as soon as they're available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
 </div>
+<!-- end features -->
+
+
+<!-- pricing section -->
+<section class="section pricing bg-light" id="pricing">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <h2 class="f-40">Pricing Plans</h2>
+                    <p class="text-muted">We offer pricing plans fit for any use case. Please <a href="#contact">Contact Us</a> if
+                    you have questions or other pricing needs.
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-3">
+                <div class="price-item shadow-sm overflow-hidden">
+                    <div class="price-up-box active p-4">
+                        <div class="badge bg-primary fw-normal f-14">Basic</div>
+                        <div class="price-tag mt-2">
+                            <h2 class="text-white mb-0 f-40">
+                                Free!
+                            </h2>
+                        </div>
+                        <p class="text-white-50 mb-1">For exploring and prototyping your application.</p>
+                        <p class="text-white-50 mb-0"></p> <!-- TODO: leaving as a placeholder -->
+                    </div>
+                    <div class="border border-3"></div>
+
+                    <div class="price-down-box p-4">
+                        <ul class="list-unstyled ">
+                            <li><i class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Scorecards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Leaderboards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>World and League Rankings
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Tournament Results
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>250 Calls Per Month
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Hard Cap on Quotas
+                            </li>
+                        </ul>
+                        <a href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing" class="btn btn-sm text-primary mt-3"><i class="mdi mdi-check-all me-2"></i>Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 ">
+                <div class="price-item shadow-sm overflow-hidden mt-4 mt-lg-0">
+                    <div class="price-up-box p-4">
+                        <div class="badge bg-primary fw-normal f-14">Pro</div>
+                        <div class="price-tag mt-2">
+                            <h2 class="text-dark mb-0 f-40"><sup class="f-22 fw-normal">$</sup>20
+                                <sup class="f-16 fw-normal"> /month</sup>
+                            </h2>
+                        </div>
+                        <p class="text-muted mb-1">For basic use cases and tournament scoring.</p>
+                        <p class="text-muted mb-0"></p>
+                    </div>
+                    <div class="border border-3"></div>
+
+                    <div class="price-down-box p-4">
+                        <ul class="list-unstyled ">
+                            <li><i class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Scorecards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Leaderboards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>World and League Rankings
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Tournament Results
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>2,000 Calls Per Month
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Quota Overages Allowed
+                            </li>
+                        </ul>
+                        <a href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing" class="btn btn-sm text-primary mt-3"><i class="mdi mdi-check-all me-2"></i>Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="price-item shadow-sm overflow-hidden mt-4 mt-lg-0">
+                    <!-- TODO: Removing recommended header
+                    <div class="topbar-header bg-primary py-2 text-center">
+                        <h6 class="mb-0 text-white fw-normal">Recommended</h6>
+                    </div>
+                    -->
+                    <div class="price-up-box p-4">
+                        <div class="badge bg-primary fw-normal f-14">Ultra</div>
+                        <div class="price-tag mt-2">
+                            <h2 class="text-dark mb-0 f-40"><sup class="f-22 fw-normal">$</sup>50<sup
+                                    class="f-16 fw-normal"> /month</sup></h2>
+                        </div>
+                        <p class="text-muted mb-1">For almost all use cases and live scoring needs.</p>
+                        <p class="text-muted mb-0"></p>
+                    </div>
+                    <div class="border border-3"></div>
+
+                    <div class="price-down-box p-4">
+                        <ul class="list-unstyled ">
+                            <li><i class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Scorecards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Leaderboards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>World and League Rankings
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Tournament Results
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>20,000 Calls Per Month
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Quota Overages Allowed
+                            </li>
+                        </ul>
+                        <a href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing" class="btn btn-sm text-primary mt-3"><i class="mdi mdi-check-all me-2"></i>Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="price-item shadow-sm overflow-hidden mt-4 mt-lg-0">
+                    <!-- TODO: Removing recommended header
+                    <div class="topbar-header bg-primary py-2 text-center">
+                        <h6 class="mb-0 text-white fw-normal">Recommended</h6>
+                    </div>
+                    -->
+                    <div class="price-up-box p-4">
+                        <div class="badge bg-primary fw-normal f-14">Mega</div>
+                        <div class="price-tag mt-2">
+                            <h2 class="text-dark mb-0 f-40"><sup class="f-22 fw-normal">$</sup>100<sup
+                                    class="f-16 fw-normal"> /month</sup></h2>
+                        </div>
+                        <p class="text-muted mb-1">For enterprise use cases and ultimate live scoring needs.</p>
+                        <p class="text-muted mb-0"></p>
+                    </div>
+                    <div class="border border-3"></div>
+
+                    <div class="price-down-box p-4">
+                        <ul class="list-unstyled ">
+                            <li><i class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Scorecards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Live Leaderboards
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>World and League Rankings
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Tournament Results
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Unlimited Calls Per Month
+                            </li>
+                            <li class="mt-2"><i
+                                    class="mdi mdi-check-circle f-20 align-middle me-2 text-primary"></i>Quota Overages Allowed
+                            </li>
+                        </ul>
+                        <a href="https://rapidapi.com/slashgolf/api/live-golf-data/pricing" class="btn btn-sm text-primary mt-3"><i class="mdi mdi-check-all me-2"></i>Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end pricing -->
+
+<!-- contact section -->
+<section class="section contact overflow-hidden" id="contact">
+    <!-- start container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <h6 class="mb-0 fw-bold text-primary">Contact Us</h6>
+                    <h2 class="f-40">Get In Touch!</h2>
+                    <p class="text-muted">We would love to help with questions, support, and to learn more about what you're building!<br></p>
+                    <p><a href="mailto:slashgolfapi@gmail.com">slashgolfapi@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end section -->
+
+<!-- docs section -->
+<!--
+<section class="section contact overflow-hidden" id="docs">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title text-center mb-5">
+                    <redoc spec-url="./openapi.yaml" side-nav-style="path-only"></redoc>
+                    <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<!-- end section -->
+
+
+<section class="bottom-footer py-4 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <p class="mb-0 text-center text-muted">©<script>document.write(new Date().getFullYear())</script> Slash Golf</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+
+
+<!--Bootstrap Js-->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Slider Js -->
+<script src="js/tiny-slider.js"></script>
+<script src="js/swiper.min.js"></script>
+
+<!-- <script src="js/smooth-scroll.polyfills.min.js"></script> -->
+
+<!-- counter -->
+<!-- <script src="js/counter.init.js"></script> -->
+
+<!-- App Js -->
+<script src="js/app.js"></script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+        if (this.isDeleting) { delta /= 2; }
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
+
+    function typewrite() {
+        if (toRotate === 'undefined') {
+            changeText()
+        }
+        else
+            var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #ffffff}";
+        document.body.appendChild(css);
+    };
+    typewrite();
+
+
+</script>
+
+</body>
+
+</html>

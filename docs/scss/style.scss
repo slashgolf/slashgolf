@@ -1,0 +1,33 @@
+/* Template Name: Jobvia
+   File Description: Main Css file of the template
+*/
+
+/****************************************
+
+01.variables
+02.general
+03.helper
+04.components
+05.menu
+06.home
+
+*****************************************/
+
+@import "variables";
+@import "switcher";
+@import "responsive";
+@import "menu";
+@import "helper";
+@import "general";
+@import "components";
+@import "dark_light";
+@import "home";
+@import "service";
+@import "features";
+@import "testi";
+@import "pricing";
+@import "team";
+@import "cta";
+@import "contact";
+@import "footer";
+

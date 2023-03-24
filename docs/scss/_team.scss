@@ -1,0 +1,34 @@
+// 
+// team.scss
+// 
+
+.team {
+    .team-box{
+        position: relative;
+        .team-image{
+            img{
+                border-radius: 10px;
+            }
+        }
+        .team-icon{
+            .social-icon{
+                a{
+                    color: $muted;
+                }
+            }
+        }
+        .team-info{
+            transform: rotate(270deg);
+            top: 40%;
+            left: -30px;
+        }
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .team {
+        background-color: $body-dark-bg-light !important;
+        color: $white;
+    }
+}

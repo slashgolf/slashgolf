@@ -1,0 +1,67 @@
+// 
+// cta.scss
+// 
+
+
+.cta {
+    // clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    background-image: url(../images/cta-bg.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        -ms-transform: matrix(1, -0.05, 0, 1, 0, 0);
+        -webkit-transform: matrix(1, -0.05, 0, 1, 0, 0);
+        transform: matrix(1, -0.05, 0, 1, 0, 0);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        transform: matrix(1, -0.05, 0, 1, 0, 0);
+        z-index: 1;
+    }
+
+    .cta-phone-image {
+        position: absolute;
+        z-index: 999;
+        top: -50%;
+    }
+}
+
+
+@media (max-width:992px) {
+    .cta{
+        .cta-phone-image{
+            position: relative !important;
+            top: 0;
+        }
+    }
+}
+
+
+
+body[data-layout-mode="dark"] {
+    .cta {
+       &::before{
+        background: $body-dark-bg-light !important;
+       }
+
+       &::after{
+        background: $body-dark-bg !important;
+       }
+    }
+   
+}

@@ -1,0 +1,235 @@
+//
+// helper.scss
+//
+
+// color
+@each $color,
+$value in $theme-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+
+  .bg-#{$color} {
+    background-color: $value !important;
+  }
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative !important;
+
+}
+
+.para-p {
+  max-width: 650px;
+}
+
+/*** ani-bg ***/
+
+@keyframes ani-bg {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(200px);
+  }
+}
+
+.box-shadow {
+  box-shadow: $box-shadow;
+}
+
+hr {
+  border-top: 1px solid $muted;
+  margin: 0;
+}
+
+.lh-1 {
+  letter-spacing: 1px;
+}
+
+// font-size
+
+.f-12 {
+  font-size: 12px;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+.f-16 {
+  font-size: 16px;
+}
+
+.f-18 {
+  font-size: 18px;
+}
+
+.f-20 {
+  font-size: 20px;
+}
+
+.f-22 {
+  font-size: 22px;
+}
+
+.f-24 {
+  font-size: 23px;
+}
+
+.f-30 {
+  font-size: 30px;
+}
+
+.f-35{
+  font-size: 35px;
+}
+
+.f-40{
+  font-size: 40px;
+}
+
+.f-50{
+  font-size: 50px;
+}
+
+.f-100{
+  font-size: 100px;
+}
+
+.margin-top-120 {
+  margin-top: 120px;
+}
+
+// avatar
+
+.avatar-xs {
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+}
+
+.avatar-sm {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+}
+
+.avatar-md {
+  height: 3.5rem;
+  width: 3.5rem;
+  line-height: 3.5rem;
+}
+
+.avatar-lg {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.avatar-xl {
+  height: 6rem;
+  width: 6rem;
+}
+
+.avatar-xxl {
+  height: 8rem;
+  width: 8rem;
+}
+
+// font-weight
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+
+.border-radius {
+  border-radius: 6px !important;
+}
+
+.btn{
+  &:hover,
+  &:focus{
+    box-shadow: none !important;
+  }
+}
+
+
+.text-gradiant{
+    background: -webkit-linear-gradient($primary, #3c91b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gradiant{
+  background: linear-gradient(80deg, rgb(70, 165, 189) 0%, rgb(17, 106, 141) 100%);
+  border: none !important;
+  color: $white !important;
+}
+
+.bg-overlay {
+  background-color: rgba(74 74 74 / 70%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-overlay-gradiant {
+  background: linear-gradient(80deg, rgb(55, 125, 143) 0%, rgb(10, 65, 87) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.text-shadow{
+  text-shadow: 1px 1px $white;
+}
+
+.modal {
+  .modal-dialog {
+      .btn-close {
+          width: 26px;
+          height: 26px;
+          background-color: #fff;
+          border-radius: 5px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          z-index: 3;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+          .btn-close {
+              opacity: 0.5;
+          }
+      }
+  }
+}
+
+
+
+@media (max-width:992px){
+  .section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative !important;
+  }
+}

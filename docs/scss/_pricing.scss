@@ -1,0 +1,44 @@
+// 
+// pricing.scss
+// 
+
+.pricing {
+    .price-item {
+        border-radius: 10px;
+        transition: all 0.5s;
+        .price-up-box{
+            background-color: rgba($primary, 0.2);
+            &.active{
+                background-color: $dark;
+            }
+        }
+        .price-down-box{
+            button{
+                background-color: $light;
+                border: 1px solid rgba($primary, 0.2);
+            }
+        }
+    }
+}
+
+body[data-layout-mode="dark"] {
+    .pricing {
+        background-color: $body-dark-bg-light !important;
+        color: $white;
+        h1{
+            color: $white !important;
+        }
+
+        .topbar-header{
+            h6{
+                color: $white !important;
+            }
+        }
+
+        .price-tag{
+            h2{
+                color: $white !important;
+            }
+        }
+    }
+}

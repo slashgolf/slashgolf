@@ -1,0 +1,122 @@
+//
+// components.scss
+//
+
+.btn {
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.5s;
+    border: 1px solid $primary;
+    overflow: hidden;
+    position: relative;
+}
+
+// btn-size
+.btn-sm {
+    padding: 6px 20px;
+    font-size: 14px;
+}
+
+@each $name,
+$value in $colors {
+    .bg-#{$name} {
+        background-color: #{$value} !important;
+    }
+
+    .bg-soft-#{$name} {
+        background-color: rgba(($value), 0.2) !important;
+    }
+
+    .text-#{$name} {
+        color: #{$value} !important;
+    }
+
+    .border-#{$name} {
+        border-color: #{$value} !important;
+    }
+
+    // Icons
+    .icon-dual-#{$name} {
+        color: $value;
+        fill: rgba($value, 0.2);
+    }
+
+    .btn-#{$name} {
+        background: #{$value} !important;
+        color: $white;
+        border-color: #{$value} !important;
+        border: 1px solid;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        &.focus,
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled):active:focus,
+        .open>.dropdown-toggle.btn-primary {
+            background: darken($value, 4%);
+            border-color: darken($value, 4%);
+            box-shadow: none !important;
+        }
+    }
+
+    .btn-outline-#{$name} {
+        color: #{$value};
+        border-color: #{$value};
+        border: 1px solid;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        &.focus,
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled):active:focus,
+        .open>.dropdown-toggle.btn-primary {
+            background: $value;
+            border-color: $value;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.btn-white {
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: $light !important;
+        // box-shadow: $box-shadow !important;
+        border: 1px solid rgba($muted, 0.1) !important;
+    }
+}
+
+
+.btn-dark {
+    border: 1px solid $dark !important;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $primary !important;
+        border: 1px solid $dark !important;
+        box-shadow: $box-shadow !important;
+    }
+}
+
+.btn-outline-dark{
+    border: 1px solid $dark;
+    color: $dark;
+    &:hover,
+    &:focus,
+    &.active{
+        color: $white;
+        background-color: $dark;
+    }
+}
+
+.btn{
+    border-color: $primary ;
+}

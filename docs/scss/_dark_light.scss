@@ -1,0 +1,70 @@
+//
+//card.scss
+//
+
+.card {
+    background-color: $white;
+    border-color: $gray-300;
+    border-radius: 20px;
+}
+
+// light-dark
+
+.mode-btn {
+    position: fixed;
+    top: 28%;
+    left: 0px;
+    z-index: 1021;
+    color: $white;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background-color: $primary;
+    border: 1px solid $primary;
+    font-size: 21px;
+    text-align: center;
+
+    .mode-dark {
+        display: block;
+        transition: all 0.5s ease;
+    }
+
+    .mode-light {
+        display: none;
+        transition: all 0.5s ease;
+    }
+}
+
+/*****************dark-mode******************/
+
+body[data-layout-mode="dark"] {
+
+   
+    #style-switcher {
+        background-color: $gray-dark-100;
+    }
+
+    .mode-dark {
+        display: none;
+    }
+
+    .mode-light {
+        display: block;
+    }
+
+    .card {
+        background-color: $gray-dark-200 !important;
+        border-color: $gray-dark-400 !important;
+    }
+
+    p{
+        color: rgba(255,255,255, .3) !important;
+
+    }
+    
+    .title{
+        h6{
+            color: $primary !important;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// 
+// features.scss
+// 
+
+.features {
+    .nav {
+        .nav-item {
+            .nav-link {
+                margin: 0 10px;
+                border: 1px solid rgba($dark, 0.5);
+                padding: 10px 30px;
+                color: $dark;
+
+                &.active {
+                    border: 1px solid $primary;
+                    background: linear-gradient(rgb(46, 141, 165) 0%, rgb(17, 77, 100) 100%);
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        .tab-pane {
+            .features-item {
+                .icon {
+                    background-color: rgba(0, 118, 163, .1);
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .features {
+        background-color: $body-dark-bg-light !important;
+        color: $white;
+    }
+
+
+    .nav {
+        .nav-item {
+            .nav-link {
+                margin: 0 20px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                padding: 10px 30px;
+                color: $white;
+            }
+        }
+    }
+
+    .features-box{
+        h6{
+            color: rgba($white, 0.7) !important;
+        }
+    }
+}

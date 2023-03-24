@@ -1,0 +1,50 @@
+// 
+// service.scss
+// 
+
+.service {
+    .service-box {
+        padding: 20px;
+        border-radius: 20px;
+        transition: all 0.3s;
+
+        a {
+            color: $dark;
+            transition: all 0.3s;
+        }
+
+        .service-icon {
+            i {
+                position: relative;
+                top: 10px;
+            }
+        }
+
+        &:hover {
+            box-shadow: $box-shadow-lg;
+            transition: all 0.3s;
+
+            a {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.home2-service{
+    padding-top: 250px;
+}
+
+
+body[data-layout-mode="dark"] {
+    .service {
+        background-color: $body-dark-bg !important;
+        color: $white;
+
+        .service-box {
+            h5 {
+                color: $white;
+            }
+        }
+    }
+}

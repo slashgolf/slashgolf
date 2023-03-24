@@ -1,0 +1,303 @@
+//
+// menu.scss
+//
+
+
+/**********************NAVBAR***********************/
+
+@media only screen and (min-width: 1600px) {
+  .container-fluid {
+    padding-right: 150px;
+    padding-left: 150px;
+  }
+}
+
+
+.navbar {
+  transition: all 0.5s ease;
+  padding: 0;
+  background-color: transparent !important;
+
+  .logo {
+    .logo-light {
+      display: none;
+    }
+
+    .logo-dark {
+      display: inline-block;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $dark;
+      font-size: 13px;
+      background-color: transparent;
+      padding: 28px 25px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 700;
+
+      &:hover,
+      &:active,
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+  .navbar-brand {
+    color: $primary;
+    font-weight: 600;
+    font-size: 26px;
+
+    span {
+      color: $black;
+      font-weight: 800;
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0px;
+    border: none;
+    font-size: 24px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .header-item {
+    color: $dark;
+    transition: all 0.5s ease;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    .dropdown {
+      .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown {
+    position: static;
+
+    // .dropdown-menu {
+    //   left: 10px;
+    //   right: 10px;
+    // }
+  }
+}
+
+.navbar-light{
+  .nav-item{
+    .nav-link{
+      color: rgba($white, 0.5) !important;
+      &:hover,
+      &:focus,
+      &.active{
+        color: $white !important;
+      }
+    }
+  }
+
+  .logo{
+    .logo-light{
+      display: block;
+    }
+    .logo-dark{
+      display: none ;
+    }
+  }
+
+  @media (max-width:992px) {
+    .logo{
+      .logo-light{
+        display: none;
+      }
+      .logo-dark{
+        display: block ;
+      }
+    }
+  }
+}
+
+.nav-sticky {
+  &.navbar-light{
+  
+    .nav-item{
+      .nav-link{
+        color: $dark !important;
+        &:hover,
+        &:focus,
+        &.active{
+          color: $primary !important;
+        }
+      }
+    }
+
+    .logo{
+      .logo-light{
+        display: none !important;
+      }
+      .logo-dark{
+        display: block !important ;
+      }
+    }
+  }
+}
+
+
+//nav-sticy
+.nav-sticky {
+  &.navbar {
+    background: $white !important;
+    margin-top: 0px;
+    box-shadow: 0px 3px 10px 0px rgba($dark, 0.20);
+  }
+
+    .nav-item{
+      .nav-link{
+        color: $dark !important;
+      }
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+  .navbar .navbar-nav .nav-link {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 14px 0;
+    background-color: $white !important;
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 8px 15px;
+          color: $dark !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+/*****************dark-mode******************/
+
+body[data-layout-mode='dark'] {
+
+  .navbar {
+    background-color: transparent !important;
+  }
+
+  .nav-sticky {
+    background-color: $gray-dark-200 !important;
+    .nav-item{
+      .nav-link{
+        color: $white !important;
+      }
+    }
+  }
+
+  .nav-sticky,
+  .navbar {
+
+    .navbar-toggler i {
+      font-size: 24px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $white !important;
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: $white;
+
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+
+    .navbar-brand {
+      color: $primary;
+      font-weight: 600;
+      font-size: 26px;
+
+      span {
+        color: $white;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    color: $white !important;
+  }
+
+  .navbar-brand {
+    color: $primary !important;
+
+    span {
+      color: $white !important;
+    }
+  }
+
+  .navbar-brand {
+    .logo-dark {
+      display: none;
+    }
+
+    .logo-light {
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .navbar {
+      background-color: $body-dark-bg !important;
+      .nav-item{
+        .nav-link{
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+
+  .navbar {
+    padding: 14px 0;
+    background-color: $white !important;
+  }
+
+  .navbar-toggler {
+    i {
+      color: $dark;
+    }
+  }
+
+  .navbar .dropdown .dropdown-menu .dropdown-item {
+    padding: 10px 30px;
+  }
+
+}

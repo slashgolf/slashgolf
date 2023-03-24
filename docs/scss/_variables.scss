@@ -1,0 +1,107 @@
+//
+// variables.scss
+//
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+//color
+$primary: #0076a3;
+$secondary: #979795;
+$success: #1d9b7b;
+$info: #24bee6;
+$warning: #ffb60b;
+$danger: #da3746;
+$white: #ffffff;
+$dark: #183b56;
+$light: #f8f9fc;
+$muted: #838485;
+$black: #000000;
+$purple: #766df4;
+$cyan: #00e6e6;
+$blue: #1f86ef;
+$pink: #f13e74;
+$orange: #e46e2a;
+$white-70: rgba($white, 0.70);
+
+
+// stylelint-disable
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$gray-dark-100: #242C34;
+$gray-dark-200: #283039;
+$gray-dark-300: #303841;
+$gray-dark-400: #3d454e;
+$gray-dark-500: #63686f;
+$gray-dark-600: #767B81;
+$gray-dark-700: #CED1D2;
+$gray-dark-800: #CFD1D2;
+$gray-dark-900: #D4D5D7;
+
+$colors: ("primary": $primary,
+  "secondary":$secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "dark": $dark,
+  "cyan": $cyan,
+  "blue": $blue,
+  "muted": $muted,
+  "purple": $purple,
+  "pink": $pink,
+  "orange": $orange,
+  "light": $light,
+  "white": $white,
+  "white-70": $white-70,
+);
+
+$theme-colors: ("primary": $primary,
+  "secondary":$secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "muted": $muted,
+  "white": $white,
+  "purple": $purple,
+  "blue": $blue,
+  "orange": $orange,
+  "white-70": $white-70,
+);
+
+//box-shadow
+$box-shadow: 0px 3px 10px 0px rgba($dark, 0.08);
+
+$box-shadow-md: 0 0 3px rgba(60, 72, 88, .15);
+
+$box-shadow-lg: 0 5px 13px rgb(60 72 88 / 20%);
+
+$body-bg: $gray-100;
+
+$body-dark-bg: #303841;
+$body-dark-bg-light: #343f4b;
+
+$form-control-bg: $white;
+
+$bg-footer: $gray-dark-100;
+
+
+// font weight
+$fw-semibold: 500;
+$fw-bold: 700;
+
+// font-family
+$font-family-base: "Poppins", sans-serif;
+$font-family-secondary: "Roboto", sans-serif;

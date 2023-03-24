@@ -1,0 +1,214 @@
+/* default.css */
+
+/* COLOR */
+
+
+.post-meta a:hover,
+.blog-post-title:hover,
+.text-primary,
+.btn-outline-primary,
+.dropdown .dropdown-menu .dropdown-item:hover,
+.dropdown .dropdown-menu .dropdown-item:active,
+.dropdown .dropdown-menu .dropdown-item:focus,
+.dropdown .dropdown-menu .dropdown-item.active,
+.dropup .dropdown-menu .dropdown-item:hover,
+.dropup .dropdown-menu .dropdown-item:active,
+.dropup .dropdown-menu .dropdown-item:focus,
+.dropup .dropdown-menu .dropdown-item.active,
+.dropright .dropdown-menu .dropdown-item:hover,
+.dropright .dropdown-menu .dropdown-item:active,
+.dropright .dropdown-menu .dropdown-item:focus,
+.dropright .dropdown-menu .dropdown-item.active,
+.dropleft .dropdown-menu .dropdown-item:hover,
+.dropleft .dropdown-menu .dropdown-item:active,
+.dropleft .dropdown-menu .dropdown-item:focus,
+.dropleft .dropdown-menu .dropdown-item.active,
+.link-post-content i {
+  color: #1361b4 !important;
+}
+
+/* BACKGROUND */
+.bg-primary,
+.btn-primary,
+.service-box:hover .icon,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.tags a:hover,
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>li>span:hover,
+.pagination>li>span:focus,
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover,
+.footer-social li a:hover i {
+  background-color: #1361b4 !important;
+}
+
+/* BORDER-COLOR */
+
+.btn-primary,
+.btn-outline-primary,
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>li>span:hover,
+.pagination>li>span:focus,
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover,
+.left-sidebar-title h4,
+.custom-form .form-control:focus,
+.popular-border,
+.blockquote,
+.link-post-content,
+.border-primary {
+  border-color: #1361b4 !important;
+}
+
+
+.navbar-custom .navbar-nav li.active a,
+.navbar-custom .navbar-nav li a:hover,
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+  color: #1361b4 !important;
+}
+
+
+@media (min-width: 200px) and (max-width: 991px) {
+
+  .navbar-custom .navbar-nav li.active a,
+  .navbar-custom .navbar-nav li a:hover,
+  .navbar-custom .navbar-nav li a:active {
+    color: #1361b4 !important;
+  }
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary .open>.dropdown-toggle.btn-primary {
+  box-shadow: 0px 8px 20px -6px rgb(101 111 224);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary .open>.dropdown-toggle.btn-primary {
+  box-shadow: 0px 8px 20px -6px rgb(101 111 224);
+  transform: translateY(-6px);
+}
+
+.nav-sticky.navbar-custom .navbar-nav li.active a,
+.nav-sticky.navbar-custom .navbar-nav li a:hover,
+.nav-sticky.navbar-custom .navbar-nav li a:focus,
+.nav-sticky.navbar-custom .navbar-nav li a:active {
+  color: #1361b4 !important;
+}
+
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:active, .navbar .navbar-nav .nav-link.active {
+  color: #1361b4 !important;
+}
+
+.btn{
+  border-color: #1361b4 !important;
+}
+
+
+.bg-gradiant {
+  background: linear-gradient(80deg, #1361b4 0%, #17477e 100%);
+  border: none !important;
+  color: #fff !important;
+
+}
+
+.text-gradiant {
+  background: -webkit-linear-gradient(#1361b4, #17477e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.features .nav .nav-item .nav-link.active {
+  background: -webkit-linear-gradient(#1361b4, #17477e);
+  border: 1px solid #1361b4;
+  color: #fff;
+}
+
+.app-slider .swiper-container .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #1361b4;
+}
+
+.testimonial .tns-nav .tns-nav-active {
+  background-color: #1361b4;
+}
+
+.contact .map-shape::after {
+  background-color: #1361b4;
+}
+
+.bg-overlay-gradiant {
+  background: linear-gradient(
+80deg, #1361b4 0%, #17477e 100%);
+}
+
+
+.pricing .price-item .price-down-box button {
+  border: 1px solid rgba(38, 175, 230, 0.2);
+}
+
+.home{
+  background-image: url(../../images/color-bg/bg-blue.png) !important;
+}
+
+.features .tab-content .tab-pane .features-item .icon {
+  background-color: rgba(0,118,163,.1);
+  color: #1361b4;
+}
+
+.mode-btn {
+  background-color: #1361b4;
+  border: 1px solid #1361b4;
+}
+
+.home-2 .video-preview .watch-video .video-play-icon i {
+  box-shadow: 0 0 0 0 #1361b4;
+}
+
+.home-6 .tns-outer .tns-controls button[data-controls=prev], .home-6 .tns-outer .tns-controls button[data-controls=next] {
+  background: #1361b479;
+}
+
+.waav span {
+  color: #1361b4 !important;
+  opacity: 0.5;
+}
+
+.home-5 .more-profile .avatar-sm:last-child {
+  background-color: #1361b4 !important;
+}
+
+body[data-layout-mode=dark] .navbar .navbar-nav .nav-link.active {
+  color: #1361b4 !important;
+}
+

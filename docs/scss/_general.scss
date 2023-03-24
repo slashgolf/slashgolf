@@ -1,0 +1,98 @@
+//
+// general.scss
+//
+
+
+body {
+  font-family: $font-family-secondary;
+  overflow-x: hidden !important;
+  color: $dark;
+
+  &.modal-open {
+    padding-right: 0px !important;
+
+    .navbar {
+      padding-right: 0px !important;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-base;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.btn,
+.btn:focus,
+button,
+button:focus {
+  outline: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  outline: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+html {
+  scroll-padding-top: 110;
+  /* height of sticky header */
+  scroll-behavior: smooth;
+}
+
+.row>* {
+  position: relative;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .navbar-custom {
+    margin-top: 0px;
+    padding: 10px 0px !important;
+    background-color: $white !important;
+    box-shadow: $box-shadow;
+    color: $white !important;
+  }
+
+  .navbar-toggler i {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: $dark;
+  }
+
+  .bg-home {
+    height: auto;
+  }
+
+  .nav-sticky.navbar-custom .navbar-nav li a {
+    color: $white !important;
+  }
+
+  .nav-sticky .logo {
+    color: $white !important;
+  }
+
+  .navbar-custom>.container {
+    width: 90%;
+  }
+
+  .clients-img {
+    display: none;
+  }
+}
+

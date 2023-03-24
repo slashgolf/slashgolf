@@ -1,0 +1,80 @@
+// 
+// contact.scss
+// 
+
+.contact{
+    .contact-map{
+        position: relative;
+        z-index: 999;
+    }
+   .map-shape{
+       &::after{
+           content: "";
+           position: absolute;
+           height: 350px;
+           width: 200px;
+           background-color: $primary;
+           top: -5%;
+           right: -10%;
+           border-radius: 10px;
+         
+       }
+    }
+    .contact-form {
+        margin-bottom: 15px;
+        box-shadow: none !important;
+        height: 48px;
+        padding-left: 20px;
+        border: 1px solid #efefef;
+        font-size: 15px;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    
+    .form-section{
+        z-index: 1;
+        position: relative;
+        bottom: -100px;
+    }
+}
+
+
+@media (max-width:1200px) {
+    .contact-map{
+        iframe{
+            width: 450px !important;
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .contact-map{
+        iframe{
+            width: 600px !important;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .contact-map{
+        iframe{
+            width: 400px !important;
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .contact-map{
+        iframe{
+            width: 300px !important;
+        }
+    }
+}
+
+
+body[data-layout-mode="dark"] {
+    .contact {
+        background-color: $body-dark-bg !important;
+        color: $white;
+    }
+}

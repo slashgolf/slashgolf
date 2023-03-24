@@ -1,0 +1,86 @@
+// 
+// footer.scss
+// 
+
+.footer{
+
+    .bg-arrow{
+        background-image: url(../images/home/arrow-bg.png) !important;
+        position: absolute;
+        top: 0;
+       height: 100%;
+       width: 100%;
+       background-repeat: no-repeat;
+    }
+
+    .footer-icon{
+        a{
+            border: 1px dashed rgba($muted, 0.5);
+        }
+    }
+
+    .footer-item{
+        li{
+            padding-bottom: 8px;
+        }
+    }
+
+    .form-control {
+        height: 56px;
+        border: 1px solid rgba($dark, 0.1);
+        // color: #ffffff;
+        &:hover,
+        &:focus{
+            box-shadow: none !important;
+        }
+    }
+    .input-group-text{
+        border: none !important;
+    }
+
+    .footer-center-border{
+        border-bottom: 1px dashed rgba($dark, 0.2) !important;
+    }
+
+    .footer-link{
+        li{
+            margin-top: 5px;
+            a{
+                
+                color: rgba($white, 0.5) !important;
+            }
+
+        }
+    }
+}
+
+
+
+
+body[data-layout-mode="dark"] {
+    .footer {
+        background-color: $body-dark-bg-light !important;
+        color: $white !important;
+
+        .bg-arrow{
+            background-image: url(../images/home/arrow-bg-dark.png) !important;
+        }
+
+        .form-control {
+            height: 56px;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;    
+        }
+        .input-group-text{
+            border: 1px solid rgba(255, 255, 255, 0.02) !important;
+        }
+        .footer-icon{
+            i{
+                color: $white !important;
+            }
+        }
+    }
+
+    .bottom-footer{
+        background-color: $body-dark-bg !important;
+    }
+}

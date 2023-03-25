@@ -173,8 +173,7 @@ paths:
       summary: Get Scorecard
       description: >-
         Fetch the live or most recent scorecard for a given tournId, year,
-        playerId, and roundId. Scorecards include shot-by-shot granularity. If a
-        roundId is not provided, the returned array will include each of the
+        playerId, and roundId. If a roundId is not provided, the returned array will include each of the
         player's scorecards from the rounds played
       parameters:
         - name: tournId
@@ -393,25 +392,25 @@ components:
                 $ref: '#/components/schemas/Date'
               format:
                 type: string
-              courses:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    host:
-                      type: string
-                    location:
-                      $ref: '#/components/schemas/Location'
-                    courseName:
-                      type: string
-                    courseId:
-                      type: string
+              # courses:
+              #   type: array
+              #   items:
+              #     type: object
+              #     properties:
+              #       host:
+              #         type: string
+              #       location:
+              #         $ref: '#/components/schemas/Location'
+              #       courseName:
+              #         type: string
+              #       courseId:
+              #         type: string
               purse:
                 type: integer
                 format: int64
-              winnersShare:
-                type: integer
-                format: int64
+              # winnersShare:
+              #   type: integer
+              #   format: int64
               fedexCupPoints:
                 type: integer
                 format: int32
@@ -624,31 +623,31 @@ components:
                 format: int32
               par:
                 type: string
-              shots:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    time:
-                      type: integer
-                      format: int64
-                    shotNum:
-                      type: integer
-                      format: int32
-                    distance:
-                      type: integer
-                      format: int32
-                      description: inches
-                    leftToHole:
-                      type: integer
-                      format: int32
-                      description: inches
-                    to:
-                      type: string
-                    from:
-                      type: string
-                    text:
-                      type: string
+              # shots:
+              #   type: array
+              #   items:
+              #     type: object
+              #     properties:
+              #       time:
+              #         type: integer
+              #         format: int64
+              #       shotNum:
+              #         type: integer
+              #         format: int32
+              #       distance:
+              #         type: integer
+              #         format: int32
+              #         description: inches
+              #       leftToHole:
+              #         type: integer
+              #         format: int32
+              #         description: inches
+              #       to:
+              #         type: string
+              #       from:
+              #         type: string
+              #       text:
+              #         type: string
         totalShots:
           type: integer
           format: int32
@@ -750,11 +749,6 @@ components:
           items:
             type: object
             properties:
-              playerId:
-                type: string
-                description: >-
-                  This field may not exist for all world-ranked players if they
-                  have not yet played on the PGA Tour
               firstName:
                 type: string
               lastName:
@@ -763,7 +757,7 @@ components:
                 type: string
               previousRank:
                 type: string
-              eventsPlayed:
+              events:
                 type: string
               totalPoints:
                 type: string

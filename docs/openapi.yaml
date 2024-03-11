@@ -496,6 +496,11 @@ components:
         status:
           type: string
           description: Status for the entire duration of the tournament
+          enum:
+            - "Not Started"
+            - "In Progress"
+            - "Complete"
+            - "Official"
     Leaderboard:
       type: object
       properties:
@@ -509,6 +514,13 @@ components:
           description: >-
             status for this round only. For tournament-wide status see 'status'
             field
+          enum:
+            - "Not Started"
+            - "Groupings Official"
+            - "In Progress"
+            - "Suspended"
+            - "Complete"
+            - "Official"
         year:
           type: string
         cutLines:
@@ -536,6 +548,12 @@ components:
                 type: string
               status:
                 type: string
+                enum:
+                  - "active"
+                  - "complete"
+                  - "cut"
+                  - "wd"
+                  - "dq"
               total:
                 type: string
               currentRoundScore:

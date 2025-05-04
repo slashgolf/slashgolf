@@ -13,20 +13,45 @@ info:
     # name: Apache 2.0
     # url: http://www.apache.org/licenses/LICENSE-2.0.html
 paths:
+  /organizations:
+    get:
+      tags:
+        - Tour Information
+      description: Fetch organizations that are available in this API
+      summary: Get Organizations
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Organization'
+      security:
+        - rapidapi-key: []
   /schedule:
     get:
       tags:
-        - PGA Tour Information
+        - Tour Information
       description: Fetch the PGA Tour schedule for a given season year
       summary: Get Schedule
       parameters:
         - name: year
           in: query
           required: true
-          description: Note that a season year (e.g. "2022") usually starts in the fall of the previous calendar year
+          description: Tour schedule based on calendar year. Note in earlier years the PGA Tour season started in the fall of the previous year.
           schema:
             type: string
-            example: 2022
+          example: "2025"
+        - name: orgId
+          in: query
+          required: false
+          description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
+          schema:
+            type: string
+            enum: ["1", "2"]
+          example: "1"
       responses:
         '200':
           description: successful operation
@@ -34,11 +59,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Schedule'
-              # example:
-              #   {
-              #     year: "2022",
-              #   }
-
         '400':
           description: Invalid input or missing parameters
       security:
@@ -46,7 +66,7 @@ paths:
   /players:
     get:
       tags:
-        - PGA Tour Information
+        - Tour Information
       summary: Get Player
       description: >-
         Fetch a PGA Tour player by his last name, first name, playerId, or a
@@ -80,7 +100,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Player'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
         '400':
           description: Invalid input or missing parameters
       security:
@@ -95,6 +117,14 @@ paths:
         See the schedule endpoint to retrieve the necessary tournId for a given
         year.
       parameters:
+        - name: orgId
+          in: query
+          required: false
+          description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
+          schema:
+            type: string
+            enum: ["1", "2"]
+          example: "1"
         - name: tournId
           in: query
           description: >-
@@ -110,7 +140,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
       responses:
         '200':
           description: successful operation
@@ -132,6 +162,14 @@ paths:
         roundId. The tournId for a given season year can be found on the
         schedule endpoint.
       parameters:
+        - name: orgId
+          in: query
+          required: false
+          description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
+          schema:
+            type: string
+            enum: ["1", "2"]
+          example: "1"
         - name: tournId
           in: query
           description: >-
@@ -147,7 +185,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
         - name: roundId
           in: query
           description: The roundId of the tournament (e.g. 1, 2, 3, 4)
@@ -176,6 +214,14 @@ paths:
         playerId, and roundId. If a roundId is not provided, the returned array will include each of the
         player's scorecards from the rounds played
       parameters:
+        - name: orgId
+          in: query
+          required: false
+          description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
+          schema:
+            type: string
+            enum: ["1", "2"]
+          example: "1"
         - name: tournId
           in: query
           description: >-
@@ -191,7 +237,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
         - name: playerId
           in: query
           description: >-
@@ -246,7 +292,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
       responses:
         '200':
           description: successful operation
@@ -282,7 +328,7 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
       responses:
         '200':
           description: successful operation
@@ -309,15 +355,15 @@ paths:
           required: true
           schema:
             type: string
-            example: 2022
+            example: 2025
         - name: statId
           in: query
           description: The statId for the desired ranking
           required: true
           schema:
             type: string
-            # example: "02671"
             enum: ["02671", "186"]
+          example: "186"
       responses:
         '200':
           description: successful operation
@@ -343,19 +389,24 @@ components:
       name: x-rapidapi-key
       in: header
   schemas:
+    Organization:
+      type: object
+      properties:
+        orgId:
+          type: string
+        orgName:
+          type: string
     Date:
       type: object
       properties:
         weekNumber:
           type: string
         start:
-          type: integer
-          format: int64
-          description: Time since epoch
+          type: string
+          description: UTC Datetime
         end:
-          type: integer
-          format: int64
-          description: Time since epoch
+          type: string
+          description: UTC Datetime
     Location:
       type: object
       properties:
@@ -392,25 +443,9 @@ components:
                 $ref: '#/components/schemas/Date'
               format:
                 type: string
-              # courses:
-              #   type: array
-              #   items:
-              #     type: object
-              #     properties:
-              #       host:
-              #         type: string
-              #       location:
-              #         $ref: '#/components/schemas/Location'
-              #       courseName:
-              #         type: string
-              #       courseId:
-              #         type: string
               purse:
                 type: integer
                 format: int64
-              # winnersShare:
-              #   type: integer
-              #   format: int64
               fedexCupPoints:
                 type: integer
                 format: int32
@@ -591,8 +626,7 @@ components:
                 type: integer
                 format: int32
         lastUpdated:
-          type: integer
-          format: int64
+          type: string
         status:
           type: string
           description: status for entire tournament
@@ -620,9 +654,6 @@ components:
           format: int32
         roundComplete:
           type: boolean
-        lastUpdated:
-          type: integer
-          format: int64
         currentRoundScore:
           type: string
         currentHole:
@@ -772,16 +803,19 @@ components:
               lastName:
                 type: string
               rank:
-                type: string
+                type: integer
+                format: int32
               previousRank:
-                type: string
+                type: integer
+                format: int32
               events:
-                type: string
+                type: integer
+                format: int32
               totalPoints:
-                type: string
+                type: number
               avgPoints:
-                type: string
+                type: number
               pointsLost:
-                type: string
+                type: number
               pointsGained:
-                type: string
+                type: number

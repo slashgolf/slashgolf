@@ -28,6 +28,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Organization'
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /schedule:
@@ -61,6 +63,8 @@ paths:
                 $ref: '#/components/schemas/Schedule'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /players:
@@ -105,6 +109,8 @@ paths:
                   $ref: '#/components/schemas/Player'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /tournament:
@@ -150,6 +156,8 @@ paths:
                 $ref: '#/components/schemas/Tournament'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /leaderboard:
@@ -202,6 +210,8 @@ paths:
                 $ref: '#/components/schemas/Leaderboard'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /scorecard:
@@ -266,6 +276,8 @@ paths:
                   $ref: '#/components/schemas/Scorecard'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /points:
@@ -302,6 +314,8 @@ paths:
                 $ref: '#/components/schemas/Points'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /earnings:
@@ -338,6 +352,8 @@ paths:
                 $ref: '#/components/schemas/Earnings'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
   /stats:
@@ -375,6 +391,8 @@ paths:
                   - $ref: '#/components/schemas/World'
         '400':
           description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
       security:
         - rapidapi-key: []
 externalDocs:

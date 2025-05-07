@@ -514,11 +514,8 @@ components:
                             type: integer
                             format: int32
                           par:
-                            type: string
-                          distance:
-                            type: string
-                          stimp:
-                            type: string
+                            type: integer
+                            format: int32
         purse:
           type: integer
           format: int64
@@ -689,32 +686,8 @@ components:
                 type: integer
                 format: int32
               par:
-                type: string
-              # shots:
-              #   type: array
-              #   items:
-              #     type: object
-              #     properties:
-              #       time:
-              #         type: integer
-              #         format: int64
-              #       shotNum:
-              #         type: integer
-              #         format: int32
-              #       distance:
-              #         type: integer
-              #         format: int32
-              #         description: inches
-              #       leftToHole:
-              #         type: integer
-              #         format: int32
-              #         description: inches
-              #       to:
-              #         type: string
-              #       from:
-              #         type: string
-              #       text:
-              #         type: string
+                type: integer
+                format: int32
         totalShots:
           type: integer
           format: int32

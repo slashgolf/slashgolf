@@ -675,19 +675,17 @@ components:
           type: integer
           format: int32
         holes:
-          type: array
-          items:
-            type: object
-            properties:
-              holeId:
-                type: integer
-                format: int32
-              holeScore:
-                type: integer
-                format: int32
-              par:
-                type: integer
-                format: int32
+          type: object
+          properties:
+            holeId:
+              type: integer
+              format: int32
+            holeScore:
+              type: integer
+              format: int32
+            par:
+              type: integer
+              format: int32
         totalShots:
           type: integer
           format: int32

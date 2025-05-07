@@ -240,7 +240,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "006"
+            example: "005"
         - name: year
           in: query
           description: The season year for the desired tournament

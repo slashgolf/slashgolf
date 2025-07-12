@@ -583,6 +583,36 @@ components:
                 format: int32
               countScore:
                 type: string
+        playoff:
+          type: object
+          properties:
+            players:
+              type: array
+              items:
+                type: object
+                properties:
+                  lastName:
+                    type: string
+                  firstName:
+                    type: string
+                  playerId:
+                    type: string
+                  position:
+                    type: string
+                  holes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        holeId:
+                          type: integer
+                          format: int32
+                        par:
+                          type: integer
+                          format: int32
+                        holeScore:
+                          type: integer
+                          format: int32
         leaderboardRows:
           type: array
           items:

@@ -581,7 +581,7 @@ components:
               cutCount:
                 type: integer
                 format: int32
-              countScore:
+              cutScore:
                 type: string
         playoff:
           type: object

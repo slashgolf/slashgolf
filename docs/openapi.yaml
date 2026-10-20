@@ -52,7 +52,7 @@ paths:
           description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
           schema:
             type: string
-            enum: ["1", "2"]
+            enum: ["1", "2", "3"]
           example: "1"
       responses:
         '200':
@@ -75,7 +75,7 @@ paths:
       description: >-
         Fetch a PGA Tour player by his last name, first name, playerId, or a
         combination of these parameters. You must provide at least one search
-        parameter to the API.
+        parameter to the API. This endpoint only supports the PGA Tour.
       parameters:
         - name: lastName
           in: query
@@ -129,7 +129,7 @@ paths:
           description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
           schema:
             type: string
-            enum: ["1", "2"]
+            enum: ["1", "2", "3"]
           example: "1"
         - name: tournId
           in: query
@@ -176,7 +176,7 @@ paths:
           description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
           schema:
             type: string
-            enum: ["1", "2"]
+            enum: ["1", "2", "3"]
           example: "1"
         - name: tournId
           in: query
@@ -230,7 +230,7 @@ paths:
           description: Select tour to receive schedule for. Defaults to "1" (PGA Tour) if not provided
           schema:
             type: string
-            enum: ["1", "2"]
+            enum: ["1", "2", "3"]
           example: "1"
         - name: tournId
           in: query
@@ -361,9 +361,11 @@ paths:
       tags:
         - Rankings
       summary: Get FedExCup or OWGR Ranking
+      deprecated: true
       description: >-
         Fetch the FedExCup or Official World Golf Ranking (OWGR) leaderboard
-        for a given year
+        for a given year. Deprecated — prefer /rankings (tour points
+        standings, incl. Race to Dubai) and /owgr (world ranking).
       parameters:
         - name: year
           in: query
@@ -389,6 +391,73 @@ paths:
                 oneOf:
                   - $ref: '#/components/schemas/FedExCup'
                   - $ref: '#/components/schemas/World'
+        '400':
+          description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
+      security:
+        - rapidapi-key: []
+  /rankings:
+    get:
+      tags:
+        - Rankings
+      summary: Get a tour's season-long points standings
+      description: >-
+        Fetch a tour's season-long points standings (FedEx Cup for the PGA Tour,
+        Race to Dubai for the DP World Tour) for a given year. The preferred
+        replacement for /stats?statId=02671.
+      parameters:
+        - name: orgId
+          in: query
+          description: The organization id. 1 = PGA Tour (FedEx Cup), 3 = DP World Tour (Race to Dubai)
+          required: true
+          schema:
+            type: string
+            enum: ["1", "3"]
+          example: "3"
+        - name: year
+          in: query
+          description: The year for the desired standings
+          required: true
+          schema:
+            type: string
+            example: 2026
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TourRanking'
+        '400':
+          description: Invalid input or missing parameters
+        '429':
+          description: Too many requests
+      security:
+        - rapidapi-key: []
+  /owgr:
+    get:
+      tags:
+        - Rankings
+      summary: Get the Official World Golf Ranking
+      description: >-
+        Fetch the Official World Golf Ranking (OWGR) for a given year. The
+        preferred replacement for /stats?statId=186.
+      parameters:
+        - name: year
+          in: query
+          description: The year for the desired ranking
+          required: true
+          schema:
+            type: string
+            example: 2026
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/World'
         '400':
           description: Invalid input or missing parameters
         '429':
@@ -464,9 +533,18 @@ components:
               purse:
                 type: integer
                 format: int64
+              purseCurrency:
+                type: string
+                description: ISO 4217 currency code for purse. DP World Tour (orgId 3) only
+                example: "USD"
               fedexCupPoints:
                 type: integer
                 format: int32
+                description: PGA Tour (orgId 1) only
+              raceToDubaiPoints:
+                type: integer
+                format: int32
+                description: DP World Tour (orgId 3) only
     Tournament:
       type: object
       properties:
@@ -519,27 +597,51 @@ components:
         purse:
           type: integer
           format: int64
+        purseCurrency:
+          type: string
+          description: ISO 4217 currency code for purse. DP World Tour (orgId 3) only
+          example: "USD"
         fedexCupPoints:
           type: integer
           format: int32
+          description: PGA Tour (orgId 1) only
+        raceToDubaiPoints:
+          type: integer
+          format: int32
+          description: DP World Tour (orgId 3) only
         players:
           type: array
           items:
             type: object
             properties:
-              player:
-                type: object
-                properties:
-                  playerId:
-                    type: string
-                  lastName:
-                    type: string
-                  firstName:
-                    type: string
-                  courseId:
-                    type: string
-                  status:
-                    type: string
+              playerId:
+                type: string
+              lastName:
+                type: string
+              firstName:
+                type: string
+              courseId:
+                type: string
+              status:
+                type: string
+              isAmateur:
+                type: boolean
+              teeTimes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    roundId:
+                      type: integer
+                      format: int32
+                    teeTime:
+                      type: string
+                      example: "7:30am"
+                    teeTimeTimestamp:
+                      type: string
+                    startingHole:
+                      type: integer
+                      format: int32
         currentRound:
           type: integer
           format: int32
@@ -838,3 +940,50 @@ components:
                 type: number
               pointsGained:
                 type: number
+    TourRanking:
+      type: object
+      properties:
+        orgId:
+          type: string
+        year:
+          type: string
+        name:
+          type: string
+        tourAvg:
+          type: string
+          description: Present for the FedEx Cup (orgId 1) only
+        previousTourn:
+          type: object
+          properties:
+            name:
+              type: string
+            tournId:
+              type: string
+            endDate:
+              type: string
+        rankings:
+          type: array
+          items:
+            type: object
+            properties:
+              playerId:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              rank:
+                type: integer
+                format: int32
+              previousRank:
+                type: string
+              totalPoints:
+                type: string
+              events:
+                type: string
+              numWins:
+                type: string
+              numTop10s:
+                type: string
+              pointsBehind:
+                type: string

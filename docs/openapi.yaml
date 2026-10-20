@@ -284,11 +284,22 @@ paths:
     get:
       tags:
         - Tournament Data
-      summary: Get Event FedExCup Points
+      summary: Get Event Points
       description: >-
-        Fetch official FedExCup points earned per player for a given tournId
-        and year. Note that PGA Tour non-members will not be officially ranked
+        Fetch official points earned per player for a given tournId and year —
+        FedExCup points on the PGA Tour, Race to Dubai points on the DP World
+        Tour. Not supported for LIV.
       parameters:
+        - name: orgId
+          in: query
+          required: false
+          description: >-
+            1 = PGA Tour and 3 = DP World Tour. Omit for
+            the default (PGA Tour) behavior. Not supported for LIV.
+          schema:
+            type: string
+            enum: ["1", "3"]
+          example: "1"
         - name: tournId
           in: query
           description: >-
@@ -324,9 +335,19 @@ paths:
         - Tournament Data
       summary: Get Event Money
       description: >-
-        Fetch player earnings for a given tournId and year. PGA Tour non-members
-        will also be included
+        Fetch official money earned per player for a given orgId, tournId, and year.
+        Not supported for LIV.
       parameters:
+        - name: orgId
+          in: query
+          required: false
+          description: >-
+            1 = PGA Tour and 3 = DP World Tour. Omit for
+            the default (PGA Tour) behavior. Not supported for LIV.
+          schema:
+            type: string
+            enum: ["1", "3"]
+          example: "1"
         - name: tournId
           in: query
           description: >-
@@ -828,6 +849,13 @@ components:
           type: string
         tournId:
           type: string
+        currency:
+          type: string
+          description: >-
+            ISO currency code the prize money is denominated in (e.g. USD, EUR,
+            AUD, ZAR). Present on DP World Tour events, whose purses vary by host
+            region. If omitted, the amounts are in US dollars (USD).
+          example: USD
         leaderboard:
           type: array
           items:
